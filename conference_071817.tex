@@ -10,42 +10,32 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Integrating C-ITS Architecture* (industrial experience report)\\
-\thanks{This is funded by EU Commission , grant number.}
+\title{Defining C-ITS Reference Architecture* \\
+{\footnotesize \textsuperscript{*}Industrial Experience Report}
+\thanks{Funded by European Union Commission , 723311.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st}Priyanka Karkhanis}
-\IEEEauthorblockA{\textit{Mathematics and Computer Science Department} \\
-\textit{TU/e}\\
-City, Country \\
-email address}
-\and
-\IEEEauthorblockN{2\textsuperscript{nd} Mark van den Brand}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
-\and
-\IEEEauthorblockN{3\textsuperscript{rd} Saurab Rajkarnikar }
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address}
-}
 
+\author{\IEEEauthorblockN{Priyanka Karkhanis,
+		Mark van den Brand, Saurab Rajkarnikar}
+	\IEEEauthorblockA{Mathematics and Computer Science Department,
+		Eindhoven University of Technology\\
+		Eindhoven, The Netherlands\\
+		Email: p.d.karkhanis@tue.nl,
+		M.G.J.v.d.Brand@tue.nl,
+		s.rajkarnikar@tue.nl}}
 \maketitle
 
+
 \begin{abstract}
-C-ITS (Cooperative Intelligent Transport Systems) architecture  is an initiative to facilitate cooperative, connected and automated mobility. It is based on the concept of System of Systems architecture and promotes a new way of thinking for solving grand challenges where the interactions of technology, policy and economics are the primary drivers. The C-ITS domain comprises widely spread systems (e.g. Traffic Management System, Traffic Light Controller, and Vehicle On-Board Units) with their independent usages, but demand for a strategy to facilitate the convergence of these complex and heterogeneous systems. The main objective of C-ITS architecture is to define an integrated architecture based on a number of existing C-ITS projects. The architecture provides a way to standardize and a unifying modeling approach by means of a common language that can be reused by other organizations to guide their internal development processes. The architecture and its concepts are based on the conceptual model of the ISO/IEC/IEEE 42010 international standard for architecture descriptions of systems, system of systems and software. It defines architecture viewpoints for C-ITS systems and uses the concept of architecture perspective for shaping these architecture viewpoints. We demonstrate this by means of C-MoBILE reference architecture which allows large scale demonstrations of integrations of C-ITS systems across Europe.
+C-ITS (Cooperative Intelligent Transport Systems) architecture  is an initiative to facilitate cooperative, connected and automated mobility. It is based on the concept of System of Systems architecture and promotes a new way of thinking for solving grand challenges where the interactions of technology, policy and economics are the primary drivers. The C-ITS domain comprises widely spread systems (e.g. Traffic Management System, Traffic Light Controller, and Vehicle On-Board Units) with their independent usages, but demand for a strategy to facilitate the convergence of these complex and heterogeneous systems. The main objective of C-ITS architecture is to define an integrated architecture based on a number of existing C-ITS projects. The architecture provides a way to standardize and a unifying modeling approach by means of a common language that can be reused by other organizations to guide their internal development processes. The architecture and its concepts are based on the conceptual model of the ISO/IEC/IEEE 42010 international standard for architecture descriptions of systems, system of systems and software. It defines architecture viewpoints for C-ITS systems and uses the concept of architecture perspective for shaping these architecture viewpoints. In this paper, we have presented the methodology used for defining the C-MobILE reference architecture. We demonstrate this by means of C-MoBILE reference architecture which allows large scale demonstrations of integrations of C-ITS systems across Europe.
 \end{abstract}
-
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+	C-ITS, ITS, architecture framework, transportation
 \end{IEEEkeywords}
-
 \section{Introduction}
 
-The C-MobILE (Accelerating C-ITS Mobility Innovation and deployment in Europe) project is a European Union (EU) project that spans across eight C-ITS equipped deployment sites and regions with more than 36 participating institutes and companies. The C-ITS domain covers not only software/system engineering field, but also traffic engineering, civil engineering, information technology etc., which require a unified definition of architecture for the C-ITS domain. It aims to make road transport safe and efficient while decreasing casualties and serious injuries on European roads. The eight C-ITS equipped deployment sites already have some C-ITS services through various projects that took place in the past. However, many of these are not interoperable. Thus, C-MobILE plans to become a common approach that ensures interoperability with seamless service and become a basis for large scale deployment in Europe. It is working with various public and private stakeholders while carrying out and developing cost effective business models particularly from the end user’s perspective. To help reach the project goals, a good architecture, capable of being deployed to whole Europe is needed. The architecture definition process in C-MobILE has been defined to support the following sub-goals:
+The C-MobILE (Accelerating C-ITS Mobility Innovation and deployment in Europe) project is a European Union (EU) project that spans across eight C-ITS equipped deployment sites and regions with more than 37 participating institutes and companies. The C-ITS domain covers not only software/system engineering field, but also traffic engineering, civil engineering, information technology etc., which require a unified definition of architecture for the C-ITS domain. It aims to make road transport safe and efficient while decreasing casualties and serious injuries on European roads. The eight C-ITS equipped deployment sites already have some C-ITS services through various projects that took place in the past. However, many of these are not interoperable. Thus, C-MobILE plans to become a common approach that ensures interoperability with seamless service and become a basis for large scale deployment in Europe. It is working with various public and private stakeholders while carrying out and developing cost effective business models particularly from the end user’s perspective. To help reach the project goals, a good architecture, capable of being deployed to whole Europe is needed. The architecture definition process in C-MobILE has been defined to support the following sub-goals:
 
 \begin{itemize}
 	\item To analyse existing C-ITS architectures to provide common concepts and vocabulary.
@@ -55,54 +45,39 @@ The C-MobILE (Accelerating C-ITS Mobility Innovation and deployment in Europe) p
 	\item To identify service-relevant parts of the architecture and define services based on the business analysis.
 \end{itemize}
  
-Some C-ITS projects that are/were been deployed and are considered for C-MobILE project are: The Dutch C-ITS Reference Architecture[3], Spookfiles A58[4], Praktijkproef Amsterdam[5], C-ITS Corridor[6], MOBiNET[7], VRUITS[8], CONVERGE[9], COMPASS4D[10], NordicWay[11] and ARC-IT[12].
+C-ITS projects that are/were been deployed and are considered for C-MobILE project are: The Dutch C-ITS Reference Architecture[3], Spookfiles A58[4], Praktijkproef Amsterdam[5], C-ITS Corridor[6], MOBiNET[7], VRUITS[8], CONVERGE[9], COMPASS4D[10], NordicWay[11] and ARC-IT[12].
 
 \section{Problem Statement}
 
-C-MobILE architecture aims for large scale demonstration project across various pilot sites. These various deployment sites either have their own defined ITS architecture. These various pilot sites have their own multidisciplinary approach towards their specific deployed strategy. These architectures comprise of different design patterns in the form of informal notations. There is no standard notation to help in merging these architectures into a silo-based architecture. An architecture that should not change the existing technology but to harmonize with other existing architectures. Without the common C-ITS architecture framework, different categorizations and ad-hoc notations have been used in the existing C-ITS architectures. Hence, it's a challenge to consolidate existing architectures ensuring that the concerns such as interoperability, security, availability, and maintainability shall be addressed. 
+C-MobILE architecture aims for large scale demonstration project across various pilot sites. These various deployment sites either have their own defined ITS architecture. These various pilot sites have their own multidisciplinary approach towards their specific deployed strategy. These architectures comprise of different design patterns in the form of informal notations. There is no standard notation to help in merging these architectures into a silo-based architecture. An architecture that should not change the existing technology but to harmonize with other existing architectures. Without the common C-ITS architecture framework, different categorizations and ad-hoc notations have been used in the existing C-ITS architectures. Hence, this demands a standardized approach to consolidate and integrate existing architectures ensuring the concerns such as interoperability, security, availability, and maintainability shall also be addressed. 
 
 \section{Methodology}
 
-We considered various C-ITS projects as mentioned in introduction section. Apart from these C-ITS architectures, we considered current ongoing ITS implementation for the deployed sites involved in C-MobILE. We applied reverse architect approach by extracting the systems, protocols, networks, technology details etc. from all of these architectures manually.  A repository has been constructed consolidating all the necessary and required information from existing architectures. A thorough analysis was done to extract the commonalities, but not leaving behind their specific implementation details. As a well-defined architecture framework is considered to be an important part of any architecture description [13], we define an architecture framework for the C-ITS domain. The architecture frameworks facilitate communication and cooperation between different stakeholders during architecting and building complex systems such as C-ITS. Many different stakeholders with their interweaving concerns require a systematic approach for addressing complexity and full lifecycle of the system. To put architecture framework and architecture description concepts in context, we extend the conceptual model of the ISO/IEC/IEEE 42010 architecture framework. The C-ITS architecture framework specifies stakeholders, their concerns, viewpoints, model kinds, and correspondence rules. C-ITS architects can use an architecture framework to represent the C-ITS reference architecture, concrete, implementation and deployed site architectures. 
+We considered various C-ITS projects as mentioned in introduction section. Apart from these C-ITS architectures, we considered current ongoing ITS implementation for the deployed sites involved in C-MobILE. We applied reverse architect approach by extracting the systems, protocols, networks, technology details etc. from all of these architectures manually.  A repository has been constructed consolidating all the necessary and required information from existing architectures. A thorough analysis was done to extract the commonalities, but not leaving behind their specific implementation details. As a well-defined architecture framework is considered to be an important part of any architecture description [13], we defined an architecture framework for the C-ITS domain <ref for its world congress>. The architecture frameworks facilitate communication and cooperation between different stakeholders during architecting and building complex systems such as C-ITS. Many different stakeholders with their interweaving concerns require a systematic approach for addressing complexity and full lifecycle of the system. To put architecture framework and architecture description concepts in context, we extend the conceptual model of the ISO/IEC/IEEE 42010 architecture framework. The C-ITS architecture framework specifies stakeholders, their concerns, viewpoints, model kinds, and correspondence rules. C-ITS architects can use an architecture framework to represent the C-ITS reference architecture, concrete, implementation and deployed site architectures.
 
-To design C-MobILE architecture framework strategy, the architecture process has been split into three parts: the reference architecture for defining high-level architecture, the concrete architecture for refining the high-level architecture into the medium-level architecture, and the implementation architecture for revising further the concrete architecture into more detailed low-level architecture. In the first design phase, the reference architecture has been created by analysing existing architectures, described in section IV. In parallel, use-cases, business-cases, and requirements to the C-MobILE system have been collected. During the second design phase, the reference architecture will be used to create the medium-level concrete architecture. Furthermore, services, interfaces, and concepts will be described to provide a guideline for the final stage. In the third design phase, interfaces and concepts will be described in detail to create a low-level implementation architecture.
-
-We propose to use Systems Modelling Language (SysML) diagram types for architectural notations of the C-ITS architectures. The SysML is a general purpose modelling language for engineering systems and consists of structure diagram, requirement diagram, and behavior diagram. The architecture framework and the same modelling approach can enable common language and will be reused for the next deployment projects. Furthermore, organizations can use the architecture to guide their internal development process as it reflects a common understanding of how the (future) ITS landscape will evolve.
+To design C-MobILE architecture framework strategy, the architecture process has been split into three parts: In the first design phase, the reference architecture has been created by analysing existing architectures, described in section IV. In parallel, use-cases, business-cases, and requirements to the C-MobILE system have been collected. During the second design phase, the reference architecture will be used to create the medium-level architecture. Furthermore, services, interfaces, and concepts will be described to provide a guideline for the final stage. In the third design phase, interfaces and concepts will be described in detail to create a low-level implementation architecture. We propose to use Systems Modelling Language (SysML) diagram types for architectural notations of the C-ITS architectures. The SysML is a general purpose modelling language for engineering systems and consists of structure diagram, requirement diagram, and behavior diagram. The architecture framework and the same modelling approach can enable common language and will be reused for the next deployment projects. Furthermore, organizations can use the architecture to guide their internal development process as it reflects a common understanding of how the (future) ITS landscape will evolve.
 
 
 \section{C-MobILE Reference Architecture}
 
-As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing reference architectures, which was consistent with the DITCM reference architecture. Therefore, the C-MobILE reference architecture is adopted from the DITCM reference architecture. We defined our reference architecture and result was written in ITS World Congress 2018 which is currently in submission.
+C-MobILE Reference Architecture focuses more on an abstract level and use “black box” approach wherever possible. It describes various systems at a high level in the form of models using SysML. The SysML Block Definition Diagram and Internal Block Diagram are used to represent the models for the reference architecture at an abstract level providing base level information to architects. However, due to the heterogeneous nature of such interfaces this will not be possible for all interfaces of the architecture. For example, there exists several competing standards for roadside infrastructure to communicate with traffic management centers. C-MobILE reference architecture does neither have the resource nor the intention to change/redefine all those standards. Instead, at high level we highlight the common systems, their interfaces and protocols by considering various existing projects to ensure interoperability.  
 
-C-MobILE Reference Architecture focuses more on an abstract level and use “black box” approach wherever possible. It describes various systems at a high level in the form of models using SysML. The SysML Block Definition Diagram and Internal Block Diagram are used to represent the models for the reference architecture at an abstract level providing base level information to architects. However, due to the heterogeneous nature of such interfaces this will not be possible for all interfaces of the architecture. For example, there exists several competing standards for roadside infrastructure to communicate with traffic management centers. C-MobILE reference architecture does neither have the resource nor the intention to change/redefine all those standards. Instead, at high level we highlight the common systems, their interfaces and protocols by considering various existing projects to ensure interoperability. 
-
-The architecture framework and reference architecture should be used as a basis for developing concrete, implementation and C-MobILE pilot site architectures. This will enable C-MobILE deployment at EU defined eight pilot sites and beyond. 
-
+As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing reference architectures, which was consistent with the DITCM reference architecture. Functional model digram is illustrated in figure <<ref>> for capturing functional viewpoint.
+\begin{figure}[ht]
+	\includegraphics[width=0.5\textwidth]{functional_vp}
+	\caption{Functional model of the C-ITS systems for C-MobILE.}
+	\label{fig}
+\end{figure}
+ 
 
 \section{Conclusions and Further Work}
 
-
-
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
-
-
-
-
-
-
-
+In this paper, we have presented the methodology used for defining the C-MobILE reference architecture. We have analysed existing C-ITS architectures, especially CONVERGE, MOBiNET, and Dutch C-ITS Reference Architecture, to define common concepts and vocabulary for the C-MobILE reference, concrete, and implementation architectures The different architectures from the pilot sites are used as an input for defining a single homogeneous reference architecture in line with current standards which will be further refined. We adapted reverse architect approach manually for extracting the components, systems, technological details etc. The next step is to automate this approach as well intended to provide benefit for system architects and stakeholders. 
 
 
 \section*{Acknowledgment}
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+The C-MobILE project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 723311.
 
 \section*{References}
 
