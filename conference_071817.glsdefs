@@ -1,0 +1,90 @@
+\ifglsentryexists{itsLabel}{}%
+{%
+\gls@defglossaryentry{itsLabel}%
+{%
+name={ITS},%
+sort={ITS},%
+type={acronym},%
+first={Intelligent Transport System\glsspace (ITS)},%
+firstplural={Intelligent Transport Systems\glsspace (ITSs)},%
+text={ITS},%
+plural={ITSs},%
+description={Intelligent Transport System},%
+descriptionplural={Intelligent Transport System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intelligent Transport System},%
+longplural={Intelligent Transport Systems},%
+short={ITS},%
+shortplural={ITSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{citsLabel}{}%
+{%
+\gls@defglossaryentry{citsLabel}%
+{%
+name={C-ITS},%
+sort={C-ITS},%
+type={acronym},%
+first={Cooperative Intelligent Transport System\glsspace (C-ITS)},%
+firstplural={Cooperative Intelligent Transport Systems\glsspace (C-ITSs)},%
+text={C-ITS},%
+plural={C-ITSs},%
+description={Cooperative Intelligent Transport System},%
+descriptionplural={Cooperative Intelligent Transport System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cooperative Intelligent Transport System},%
+longplural={Cooperative Intelligent Transport Systems},%
+short={C-ITS},%
+shortplural={C-ITSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cmobileLabel}{}%
+{%
+\gls@defglossaryentry{cmobileLabel}%
+{%
+name={C-MobILE},%
+sort={C-MobILE},%
+type={acronym},%
+first={Accelerating C-ITS Mobility Innovation and deployment in Europe\glsspace (C-MobILE)},%
+firstplural={Accelerating C-ITS Mobility Innovation and deployment in Europes\glsspace (C-MobILEs)},%
+text={C-MobILE},%
+plural={C-MobILEs},%
+description={Accelerating C-ITS Mobility Innovation and deployment in Europe},%
+descriptionplural={Accelerating C-ITS Mobility Innovation and deployment in Europe\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Accelerating C-ITS Mobility Innovation and deployment in Europe},%
+longplural={Accelerating C-ITS Mobility Innovation and deployment in Europes},%
+short={C-MobILE},%
+shortplural={C-MobILEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
