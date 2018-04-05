@@ -55,19 +55,35 @@ C-ITS, ITS, architecture framework, transportation
 
 \section{Introduction}
 
-The European Parliament in its directive 2010/40/EU \cite{ec} defines Intelligent Transport Systems (ITS) as "systems in which information and communication technologies are applied in the field of road transport, including infrastructure, vehicles and users, and in traffic management and mobility management, as well as for interfaces with other modes of transport".
-ITSs can be further described as systems which aim to make transportation safe and economical by combining data from the vehicles and other sensors on the roadway together with weather information.
-Cooperative-Intelligent Transport Systems (C-ITS) \cite{c-its} add upon ITSs by providing ways for connected vehicles to interact with other connected vehicles or any infrastructure such as Road Side Units.
-This interaction is where the term cooperatives comes from.
-In this scenario the vehicles can act as sensors as well.
+The European Parliament in its directive 2010/40/EU \cite{ec} defines Intelligent Transport Systems (ITS) as "systems in which information and communication technologies are applied in the field of road transport, including infrastructure, vehicles and users, and in traffic management and mobility management, as well as for interfaces with other modes of transport."
+ITS can be further described as systems which aim to make transportation safe and economical by combining data from the vehicles and other sensors on the roadway together with weather information. It began during the 1990s\cite{itsbegin} with projects in
+\begin{itemize}
+	\item the US (named Intelligent Vehicle Highway System \cite{ivhs})
+	\item various countries in Europe (with the program Prometheus \cite{prometheus})
+	\item Japan (with a research committee Road/Automobile Communication System \cite{racs})
+\end{itemize}
+
+Cooperative Intelligent Transport Systems (C-ITS) \cite{c-its} adds upon ITS by providing ways for connected vehicles to interact with other connected vehicles or any infrastructure such as the traffic light controller, roadway signals or roadside units. This interaction is where the term cooperatives comes from. In this scenario the vehicles can act as sensors as well.
+
+The C-ITS domain covers not only the field of software- and systems engineering, but also traffic engineering, civil engineering, and information technology, which require a unified architecture for the C-ITS domain.
+
+It aims to make road transport safe and efficient while decreasing casualties and serious injuries on European roads.
 
 The C-MobILE project (Accelerating C-ITS Mobility Innovation and deployment in Europe) is an EU project that spans across eight C-ITS equipped deployment sites and regions with more than 37 participating institutes and companies.
-The C-ITS domain covers not only the fields of software- and systems engineering, but also traffic engineering, civil engineering, and information technology, which require a unified architecture for the C-ITS domain.
-It aims to make road transport safe and efficient while decreasing casualties and serious injuries on European roads.
+
+\begin{center}
+\begin{figure}[ht!]
+	\includegraphics[width=0.49\textwidth]{deploymentsites}
+	\caption{The C-ITS equipped deployment sites partnering with C-MobILE. 1. Newcastle, UK, 2. Eindhoven and Helmond (North Brabant), The Netherlands, 3. Bordeaux, France, 4. Vigo, Spain, 5. Bilbao, Spain, 6. Barcelona, Spain, 7. Region of Central Macedonia, Greece and 8. Copenhagen, Denmark}
+	\label{fig:deployment sites}
+\end{figure}	
+\end{center}
+
 The eight C-ITS equipped deployment sites already have C-ITS services through various projects that took place in the past.
-However, many of these are not interoperable.
-C-MobILE plans to become a common approach that ensures seamless interoperability and become a basis for large scale deployment in Europe.
-It is working with various public and private stakeholders while carrying out and developing cost effective business models particularly from the end user's perspective. \todo{Who are end users?}
+However, many of these are not compatible with each other.
+C-MobILE plans to become a common approach that ensures compatibility and become a basis for large scale deployment in Europe.
+It is working with various public and private stakeholders while carrying out and developing cost effective business models particularly from the end user's perspective.
+
 To help reach the project goals, an architecture capable of being deployed to the whole of Europe is needed.
 The architecture definition process in C-MobILE has been defined to support the following sub-goals.
 
@@ -79,34 +95,43 @@ The architecture definition process in C-MobILE has been defined to support the 
   \item Identify service-relevant parts of the architecture and define services based on the business analysis.
 \end{itemize}
 
-C-ITS projects that are deployed and are considered for C-MobILE project are: The Dutch C-ITS Reference Architecture \cite{ditcm}, Spookfiles A58\footnote{Shockwave traffic jams a58. \url{http://www.spookfiles.nl/shockwave-traffic-jams-a58}.}, Praktijkproef Amsterdam\footnote{Praktijkproef amsterdam. \url{https://www.rijkswaterstaat.nl/zakelijk/innovatie-en-duurzame-leefomgeving/innovatie/wegeninnovaties/praktijkproef-amsterdam.aspx}.}, C-ITS Corridor\footnote{Cooperative its corridor.\url{https://itscorridor.mett.nl/default.aspx}}, MOBiNET\footnote{MOBiNET. \url{http://www.mobinet.eu/}.}, VRUITS\footnote{Improving the safety and mobility of vulnerable road users through its applications. \url{https://cordis.europa.eu/project/rcn/186986_en.html}.}, CONVERGE\footnote{Converge. \url{https://converge-online.de/}}, COMPASS4D\footnote{Compass4d. \url{http://ertico.com/projects/compass4d/}.}, NordicWay\footnote{Nordicway. \url{http://vejdirektoratet.dk/EN/roadsector/Nordicway/Pages/Default.aspx}.} and ARC-IT\footnote{Arc-it version 8.1. \url{https://local.iteris.com/arc-it/}.}.
-
 
 \section{Problem Statement}
 
-The C-MobILE project aims for a large scale demonstration across various pilot sites.
-These various deployment sites all have their own defined ITS architecture, and their own multidisciplinary approach towards their deployed strategy.
-These architectures comprise different informal design patterns.
+The C-MobILE project aims for a large scale demonstration across various C-ITS equipped deployment sites. These deployment sites have defined their own ITS architecture, and their own multidisciplinary approach towards their deployed strategy. These architectures comprise of different informal design patterns.
 There is no standard notation to help in merging these architectures into a silo-based architecture.
 Silo-based means harmonizing existing technologies without changing them.
 Without a common C-ITS architecture framework, different categorizations and ad-hoc notations have been used in existing C-ITS architectures.
-This demands a standardized approach to consolidate and integrate existing architectures, addressing concerns such as interoperability, security, availability, and maintainability.
+This demands a standardized approach to consolidate and integrate existing architectures, addressing concerns such as security, availability, and maintainability.
 
-\begin{figure*}[!t]
-  \centering
-  \includegraphics[width=0.8\textwidth]{functional_vp}
-  \caption{Functional model capturing functional viewpoint of the C-ITS systems for C-MobILE.}
-  \label{functional}
-  \centering
+%\begin{figure}[ht!]
+%  \centering
+%  \includegraphics[width=0.5\textwidth]{functional_vp}
+%  \caption{Functional model capturing functional viewpoint of the C-ITS systems for C-MobILE.}
+%  \label{functional}
+%  \centering
 
-\end{figure*}
+%\end{figure}
 
 
 \section{Methodology}
 
-We considered various C-ITS projects as mentioned in the introduction.
-Besides these C-ITS architectures, we considered ongoing ITS implementations for the deployed sites involved in C-MobILE.
-We applied a reverse architect approach by extracting the systems, protocols, networks, and technology details from these architectures manually.
+To develop a common and compatible reference architecture, the following C-ITS projects were taken into consideration: (i) The Dutch C-ITS Reference Architecture (DITCM) \cite{ditcm}, (ii) CONVERGE\footnote{Converge. \url{https://converge-online.de/}}, (iii) COMPASS4D\footnote{Compass4d. \url{http://ertico.com/projects/compass4d/}.}, (iv) MOBiNET\footnote{MOBiNET. \url{http://www.mobinet.eu/}.}, (v) NordicWay\footnote{Nordicway. \url{http://vejdirektoratet.dk/EN/roadsector/Nordicway/Pages/Default.aspx}.} and (vi) US-ITS (ARC-IT) \footnote{Arc-it version 8.1. \url{https://local.iteris.com/arc-it/}.}.
+
+Besides these C-ITS architectures, we considered ITS implementations of the deployed sites involved with C-MobILE.
+We applied a reverse architect approach by extracting the systems, protocols, networks, and technology details from these architectures manually (Fig.: \ref{methodology}).
+
+
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{methodology}
+	\caption{Developing a reference architecture for C-ITS by extracting and reverse engineering of existing architectures}
+	\label{methodology}
+	\centering
+	
+\end{figure}
+
 A repository has been constructed consolidating all necessary and required information from existing architectures.
 A thorough analysis was done to extract the commonalities, but not leaving behind their specific implementation details.
 As a well-defined architecture framework is important for any architecture description \cite{archframework}, we defined an architecture framework for the C-ITS domain \cite{ITSCongress}.
@@ -177,10 +202,25 @@ The C-MobILE project is funded by the European Union's Horizon 2020 research and
     \bibitem{ditcm} Marcel van Sambeek, Frank Ophelders, Tjerk Bijlsmaand Borgert van der Kluit, Oktay Turetken, Rik Eshuis, Kostas Traganos, and Paul Grefen. Towards an architecture for cooperative-intelligent transport system (c-its) applications in the netherlands. Available at \url{ https://www.researchgate.net/publication/313580768_Towards_an_Architecture_for_Cooperative-Intelligent_Transport_System_C-ITS_Applications_in_the_Netherlands}.
 
     \bibitem{iso42010} ISO/IEC/IEEE Systems and software engineering -- Architecture description," in ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000) , vol., no., pp.1-46, Dec. 1 2011 doi: 10.1109/IEEESTD.2011.6129467
+    
     \bibitem{archframework}Emery, D., and Rich H. Every architecture description needs a framework: Expressing architecture frameworks using ISO/IEC 42010. Software Architecture, 2009 \& European Conference on Software Architecture. WICSA/ECSA 2009. Joint Working IEEE/IFIP Conference on. IEEE, 2009.
+    
     \bibitem{ITSCongress}Raul Ferrandez, Yanja Dajsuren, Priyanka Karkhanis, Manuel Fünfrocken, Marcos Pillado. C-MobILE C-ITS Reference Architecture. ITS World Congress 2018 (unpublished).
     \bibitem{c-its}A. Festag, "Cooperative intelligent transport systems standards in europe," in IEEE Communications Magazine, vol. 52, no. 12, pp. 166-172, December 2014.  doi: 10.1109/MCOM.2014.6979970
-
+    
+    \bibitem{itsbegin} A. Luis Osório, Hamideh Afsarmanesh, and Luis M. Camarinha-Matos. Towards a reference architecture
+    for a collaborative intelligent transport system infrastructure. In Luis M. Camarinha-Matos, Xavier Boucher, and Hamideh Afsarmanesh, editors, Collaborative Networks for a Sustainable
+    World, pages 469–477, Berlin, Heidelberg, 2010. Springer Berlin Heidelberg.
+    
+    \bibitem{ivhs} P.D. Heermann and D.L. Caskey. Intelligent vehicle highway system: Advanced public transportation
+    systems. Mathematical and Computer Modelling, 22(4):445 – 453, 1995.
+    
+    \bibitem{prometheus} M. Williams. Prometheus-the european research programme for optimising the road transport
+    system in europe. In IEE Colloquium on Driver Information, pages 1/1–1/9, Dec 1988.
+    
+    \bibitem{racs} K. Takada, Y. Tanaka, A. Igarashi, and D. Fujita. Road/automobile communication system
+    (racs) and its economic effect. In Vehicle Navigation and Information Systems Conference,
+    1989. Conference Record, pages A15–A21, Sept 1989.
 \end{thebibliography}
 
 
