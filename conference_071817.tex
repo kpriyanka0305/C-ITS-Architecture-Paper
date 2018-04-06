@@ -9,13 +9,12 @@
 \usepackage{url}
 \usepackage{multicol}
 
-
 \usepackage[dvipsnames]{xcolor}
 \newcommand{\todo}[1]{\textcolor{red}{\emph{Todo: #1}}}
 
 \begin{document}
 
-\title{Defining C-ITS Reference Architecture* \\
+\title{Integrated C-ITS Reference Architecture* \\
   {\footnotesize \textsuperscript{*}Industrial Experience Report}
   \thanks{Funded by European Union Commission , 723311.}
 }
@@ -44,12 +43,11 @@ The main objective of C-ITS is to define an integrated architecture based on a n
 The architecture provides a way to standardize and a unifying modeling approach by means of a common language that can be reused by other organizations to guide their internal development processes.
 The architecture and its concepts are based on the conceptual model of the ISO/IEC/IEEE 42010 \cite{iso42010} international standard for architecture descriptions of systems, System of Systems and software.
 It defines architecture viewpoints for C-ITS systems and uses the concept of architecture perspectives for shaping these architecture viewpoints.
-In this paper we present the methodology used for defining the C-MobILE reference architecture.
-We demonstrate this by means of the C-MobILE reference architecture, which allows large scale demonstrations of integrations of C-ITS systems across Europe.
+In this paper, we present the C-MobILE C-ITS reference architecture that is aimed at large scale deployment and demonstration with partner deployment sites across Europe. Also,  \todo{add more in abstract}.
 \end{abstract}
 
 \begin{IEEEkeywords}
-C-ITS, ITS, architecture framework, transportation
+C-ITS, ITS, Architecture Framework, transportation
 \end{IEEEkeywords}
 
 
@@ -67,17 +65,15 @@ Cooperative Intelligent Transport Systems (C-ITS) \cite{c-its} adds upon ITS by 
 
 The C-ITS domain covers not only the field of software- and systems engineering, but also traffic engineering, civil engineering, and information technology, which require a unified architecture for the C-ITS domain.
 
-It aims to make road transport safe and efficient while decreasing casualties and serious injuries on European roads.
-
 The C-MobILE project (Accelerating C-ITS Mobility Innovation and deployment in Europe) is an EU project that spans across eight C-ITS equipped deployment sites and regions with more than 37 participating institutes and companies.
 
-\begin{center}
+
 \begin{figure}[ht!]
-	\includegraphics[width=0.49\textwidth]{deploymentsites}
+	\centering
+	\includegraphics[width=0.4\textwidth]{deploymentsites}
 	\caption{The C-ITS equipped deployment sites partnering with C-MobILE. 1. Newcastle, UK, 2. Eindhoven and Helmond (North Brabant), The Netherlands, 3. Bordeaux, France, 4. Vigo, Spain, 5. Bilbao, Spain, 6. Barcelona, Spain, 7. Region of Central Macedonia, Greece and 8. Copenhagen, Denmark}
 	\label{fig:deployment sites}
 \end{figure}	
-\end{center}
 
 The eight C-ITS equipped deployment sites already have C-ITS services through various projects that took place in the past.
 However, many of these are not compatible with each other.
@@ -90,13 +86,13 @@ The architecture definition process in C-MobILE has been defined to support the 
 \begin{itemize}
   \item Analyse existing C-ITS architectures to provide common concepts and vocabulary.
   \item Identify a set of patterns that have been detected (or applied implicitly) during the analysis of existing C-ITS architectures and their implementations.
-  \item Create a C-ITS reference architecture that enables pan-European interoperability of C-ITS (concrete/implementation) architectures based on the generalization of existing C-ITS architectures.
+  \item Create a reference architecture that enables pan-European interoperability of C-ITS (concrete/implementation) architectures based on the generalization of existing C-ITS architectures.
   \item Define an implementation architecture specifying components and their relationships (interfaces) guided and constrained by the C-ITS reference architecture.
   \item Identify service-relevant parts of the architecture and define services based on the business analysis.
 \end{itemize}
 
 \section{Related Works}
-There are various C-ITS projects under development with several already completed and deployed successfully. Of those projects, the following were similar C-ITS reference architecture projects.
+There are various C-ITS projects under development with several already completed and deployed successfully. Of those projects, the following were similar reference architecture projects.
 
 \begin{enumerate}
 	\item Dutch C-ITS Reference Architecture (DITCM)\cite{ditcm}\cite{ditcmits}:\\
@@ -106,7 +102,7 @@ There are various C-ITS projects under development with several already complete
 	\item COMPASS4D\footnote{\label{compass4d}Compass4d. \url{http://ertico.com/projects/compass4d/}.}:\\
 	This was an EU funded project that worked with three C-ITS services such as Road Hazard Warning, Red Light Violation Warning and Energy Efficiency Intersection Service.
 	\item NordicWay\footnote{\label{nordicway}Nordicway.\url{http://vejdirektoratet.dk/EN/roadsector/Nordicway/Pages/Default.aspx}.}:\\
-	This project, as the name suggests, focused mostly on the Nordic countries (Finland, Sweden, Norway and Denmark) and is a pre-deployment pilot project for  C-ITS deployment. This is one of the first projects that utilizes cellular networks for communication.
+	This project, as the name suggests, focused mostly on the Nordic countries (Finland, Sweden, Norway and Denmark) and is a pre-deployment pilot project for  C-ITS deployment.
 	\item US-ITS (ARC-IT)\footnote{\label{arcit}Arc-it version 8.1. \url{https://local.iteris.com/arc-it/}}:\\
 	The US-ITS or ARC-IT project is a large scale reference architecture that acts as building blocks for small scale regional C-ITS projects in various regions of the USA.
 
@@ -121,28 +117,15 @@ Thus, there doesn't seem to be a standard notation for use in a large scale depl
 
 This is where the C-MobILE project comes in. It aims for a large scale demonstration across various deployment sites with an architecture that harmonizes existing technologies without changing the existing architectures. It also plans to be a building block or the base for future C-ITS implementations in other cities or regions.
 
-%\begin{figure}[ht!]
-%  \centering
-%  \includegraphics[width=0.5\textwidth]{functional_vp}
-%  \caption{Functional model capturing functional viewpoint of the C-ITS systems for C-MobILE.}
-%  \label{functional}
-%  \centering
-
-%\end{figure}
-
-
 \section{Methodology}
-
- 
-To develop a common and compatible reference architecture, the following C-ITS projects were taken into consideration: (i) The Dutch C-ITS Reference Architecture (DITCM) \cite{ditcm}\cite{ditcmits}, (ii) CONVERGE\footnotemark[\ref{converge}], (iii) COMPASS4D\footnotemark[\ref{compass4d}], (iv) MOBiNET\footnote{\label{mobinet}MOBiNET. \url{http://www.mobinet.eu/}}, (v) NordicWay\footnotemark[\ref{nordicway}], (vi) SCOOP@F\footnote{SCOOP@F. \url{https://ec.europa.eu/inea/en/connecting-europe-facility/cef-transport/projects-by-country/multi-country/2014-eu-ta-0669-s}} and (vii) US-ITS (ARC-IT)\footnotemark[\ref{arcit}].
-
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{methodology}
+	\includegraphics[width=0.45\textwidth]{methodology}
 	\caption{Developing a reference architecture for C-ITS by extracting and reverse engineering of existing architectures}
-	\label{methodology}
-	\centering
+ 	\label{methodology}
+ 	\centering
 \end{figure}
+To develop a common and compatible reference architecture, the following C-ITS projects were taken into consideration: (i) The Dutch C-ITS Reference Architecture (DITCM) \cite{ditcm}\cite{ditcmits}, (ii) CONVERGE\footnotemark[\ref{converge}], (iii) COMPASS4D\footnotemark[\ref{compass4d}], (iv) MOBiNET\footnote{\label{mobinet}MOBiNET. \url{http://www.mobinet.eu/}}, (v) NordicWay\footnotemark[\ref{nordicway}], (vi) SCOOP@F\footnote{SCOOP@F. \url{https://ec.europa.eu/inea/en/connecting-europe-facility/cef-transport/projects-by-country/multi-country/2014-eu-ta-0669-s}} and (vii) US-ITS (ARC-IT)\footnotemark[\ref{arcit}].
 
 Besides these C-ITS architectures, we considered ITS implementations of the deployed sites involved with C-MobILE.
 We applied a reverse architect approach by extracting the systems, protocols, networks, and technology details from these architectures manually (Fig.: \ref{methodology}).
@@ -150,8 +133,6 @@ We applied a reverse architect approach by extracting the systems, protocols, ne
 To define the reference architecture Systems Modeling Language or SysML was proposed. SysML is a general purpose modeling language for engineering systems, and consist of structure diagrams, requirement diagrams and behavior diagrams. The architecture framework and a unified modelling approach can enable common language and will be reused for the next deployment projects. Furthermore, organizations can use the architecture to guide their internal development process as it reflects a common understanding of how the ITS landscape will evolve.
 
 More info on methodology in \todo{give name of paper}.
-
-
 
 \section{C-MobILE Reference Architecture}
 \label{secCMobILEReferenceArchitecture}
@@ -161,26 +142,61 @@ It describes various systems at a high level in the form of models using SysML B
 The C-MobILE project neither has the resources nor the intention to redefine all those standards.
 Instead, at high level we highlight the common systems, their interfaces and protocols by considering various existing projects to ensure interoperability.
 
-As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing architectures, which was consistent with the DITCM reference architecture \cite{ditcm}\cite{ditcmits}.
-The structure of a system is captured in functional structure models using BDDs by categorizing into systems and decomposing a system into subsystems.
-A system defines the functionality and functional data flow interfaces between systems that are required to support a particular ITS application.
-A functional model digram is shown in Figure \ref{functional} for the capturing functional viewpoint.
+As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing architectures, which was consistent with the DITCM reference architecture \cite{ditcm}\cite{ditcmits}. As an illustration of the reference architecture, we discuss here the context and functional viewpoints by displaying the context model representation in Figure \ref{fig:contextviewpoint} and the functional model representation in Figure \ref{fig:functional}. The models presented are at an abstract level which will be further decomposed into an architecture that will be used for implementation.
 
+The system structure is captured by categorizing into systems such as Central, Roadside, Vehicle and Traveler/VRU System with a Support System that supports all the other systems (Figures \ref{fig:contextviewpoint} and \ref{fig:functional}). Here, VRU means Vulnerable Road User such as a pedestrian or a cyclist. These systems are further decomposed into subsystems such as Traffic Management System (TMS) for the Central System (Figure \ref{fig:functional}).
 
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.45\textwidth]{context}
+	\caption{Context Model Representation of the C-MobILE Reference Architecture}
+	\label{fig:contextviewpoint}
+	\centering
+\end{figure}
+The context viewpoint describes the relationships, dependencies, and interactions between the system and its environment (e.g. people,
+systems and external entities) \cite{sysml}. The context view (Figure \ref{fig:contextviewpoint})conforms to the context viewpoint and helps system’s stakeholders (e.g. system/software architects, designers, developer and users) understand the system context.
 
-A functional viewpoint describes the system's runtime functional elements, their responsibilities, interfaces, and primary interactions.
-The functional view conforms to the functional viewpoint, helps the system's stakeholders understand the system structure, and has an impact on the system's quality properties.
-The system structure is captured in functional models using BDDs and by categorizing into systems and decomposing a system into subsystems. \todo{This is the same sentence as in the last paragraph}
-A system defines the functionality and functional data flow interfaces between systems that are required to support a particular ITS application.
-Information flows depict the exchange of information between subsystems.
+The systems as mentioned before in terms of the context viewpoint is as below:
 
+\begin{itemize}
+	\item Support System: Comprises of sub-systems performing various tasks e.g.: governance, test and certification management, security and credentials management.
+	\item Central System: Comprises of sub-systems to support connected vehicles, field and mobile devices. The sub-systems can be aggregated together or geographical or functionally distributed
+	\item Roadside System: Comprises of sub-systems which covers the ITS infrastructure on or along physical road infrastructure, e.g.: roadside units, signal/lane control etc.
+	\item Vehicle System: Comprises of sub-systems which are integrated within vehicle such on-board systems (advanced driver assistance / safety systems, navigation, remote data collection or information).
+	\item Traveler/VRU System: Comprises of both personal devices (e.g.: mobile devices, navigations devices) and specific systems connected to vehicles of VRU’s (e.g.: tags).
+\end{itemize}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.45\textwidth]{functional}
+	\caption{Functional Model Representation of the C-MobILE Reference Architecture}
+	\label{fig:functional}
+	\centering
+\end{figure}
+
+A functional viewpoint in the abstract level describes the system's runtime functional elements and primary interactions. The functional view (Figure \ref{fig:functional}) conforms to the functional viewpoint, helps the system's stakeholders understand the system structure, and has an impact on the system's quality properties.
+
+As discussed previously, the systems were further decomposed into subsystems. The subsystems are depicted in the Functional model in Figure \ref{fig:functional} as functional elements with primary interaction with other subsystems. 
+
+The subsystems for the Central System are the Traffic Management System (TMS: A functional back-office system of the responsible road operator to enforce legal actions on the roads), SP/DP/TIS BO (Generic Back-Office systems for Service Providers and Data Providers that collects and fuses date from service providers, vehicles and infrastructure), Service Provider Exchange System (SPES: An e-Market system for discovery and exchange of ITS services) and Communication Data Provider (A generic back-office system of a communication provider user for access at several communication systems from other BO systems).
+
+The subsystems for the Roadside System are Roadside (Different types of existing systems such as a Traffic Light controller or substations) and Roadside Unit (A cooperative roadside communication system responsible for two-way communication functionality at a part of a road network).
+
+The subsystems for the Vehicle System are On Board Unit (OBU: A sub-system attached to a car and needed for informing/advising the driver through a HMI), Remote Vehicle On Board Unit (An OBU of the other vehicle that is communication with the host vehicle) and Vehicle Electrical \& Electronic System (The parts of the vehicle such as in-car light sensors, speed sensors and actuators).
+
+The subsystems for the Traveler/VRU System are Personal Information Devices (PID: Typically a smartphone or personal navigation device used by an end-user) and Vulnerable Road Users On Board Unit (An OBU attached to a VRU vehicle like bicycle or moped and need to advices the cyclists or the moped driver).
+
+\section{Lessons Learned}
+\todo{Lessons Learned}
 
 \section{Conclusions and Further Work}
 
-In this paper we present the methodology used for defining the C-MobILE reference architecture.
-In the C-MobILE project we have analysed existing C-ITS architectures, especially CONVERGE, MOBiNET, and Dutch C-ITS Reference Architecture, to define common concepts and vocabulary for the C-MobILE reference, concrete, and implementation architectures.
-We used the different architectures from the pilot sites as an input for defining a single homogeneous reference architecture, which will be further refined.
-We employed a reverse architect approach for manually extracting components, systems, and technological details.
+\todo{conclusion}
+
+In this paper we present the reference architecture defined for the C-MobILE project.
+%In the C-MobILE project we analysed existing C-ITS architectures, especially CONVERGE, MOBiNET, and Dutch C-ITS Reference Architecture, to define common concepts and vocabulary for the C-MobILE reference, concrete, and implementation architectures.
+%We used the different architectures from the deployment sites as an input for defining a single homogeneous reference architecture, which will be further refined.
+%We employed a reverse architect approach for manually extracting components, systems, and technological details.
 The next step is to automate this approach, with the intention to provide benefits for system architects and stakeholders.
 
 
@@ -217,6 +233,8 @@ The C-MobILE project is funded by the European Union's Horizon 2020 research and
     \bibitem{racs} K. Takada, Y. Tanaka, A. Igarashi, and D. Fujita. Road/automobile communication system
     (racs) and its economic effect. In Vehicle Navigation and Information Systems Conference,
     1989. Conference Record, pages A15–A21, Sept 1989.
+    
+    \bibitem{sysml} Rozanski, N. and Woods, E. Software systems architecture: working with stakeholders using viewpoints and perspectives. Addison-Wesley, 2011.
 \end{thebibliography}
 
 
