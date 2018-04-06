@@ -95,14 +95,31 @@ The architecture definition process in C-MobILE has been defined to support the 
   \item Identify service-relevant parts of the architecture and define services based on the business analysis.
 \end{itemize}
 
+\section{Related Works}
+There are various C-ITS projects under development with several already completed and deployed successfully. Of those projects, the following were similar C-ITS reference architecture projects.
+
+\begin{enumerate}
+	\item Dutch C-ITS Reference Architecture (DITCM)\cite{ditcm}\cite{ditcmits}:\\
+		This project focused mostly in developing a reference architecture for large scale C-ITS deployment in the Netherlands. It was build based on current and some finished C-ITS projects.
+	\item CONVERGE\footnote{\label{converge}Converge. \url{https://converge-online.de/}}: \\
+		This was a German funded project that developed an open platform for service providers with focus on Car2X (V2X or Vehicle to Vehicle/Infrastructure) Systems Network.
+	\item COMPASS4D\footnote{\label{compass4d}Compass4d. \url{http://ertico.com/projects/compass4d/}.}:\\
+	This was an EU funded project that worked with three C-ITS services such as Road Hazard Warning, Red Light Violation Warning and Energy Efficiency Intersection Service.
+	\item NordicWay\footnote{\label{nordicway}Nordicway.\url{http://vejdirektoratet.dk/EN/roadsector/Nordicway/Pages/Default.aspx}.}:\\
+	This project, as the name suggests, focused mostly on the Nordic countries (Finland, Sweden, Norway and Denmark) and is a pre-deployment pilot project for  C-ITS deployment. This is one of the first projects that utilizes cellular networks for communication.
+	\item US-ITS (ARC-IT)\footnote{\label{arcit}Arc-it version 8.1. \url{https://local.iteris.com/arc-it/}}:\\
+	The US-ITS or ARC-IT project is a large scale reference architecture that acts as building blocks for small scale regional C-ITS projects in various regions of the USA.
+
+\end{enumerate}
 
 \section{Problem Statement}
+The reference architecture projects sought to develop a base for future C-ITS deployments. However, these approaches eventually led to various architectures that defined their own multidisciplinary approach toward their deployed strategy. They provided standard notations to help in merging these architectures which turned out to be regional. For example, the Dutch C-ITS Reference Architecture used standard protocols but only relating to the Netherlands and CONVERGE only related to Germany while the US-ITS used their own protocols. NordicWay and Compass4D used a standard protocol, however, they did not focus on many services thus rendering those project unsuitable for rest of Europe.
 
-The C-MobILE project aims for a large scale demonstration across various C-ITS equipped deployment sites. These deployment sites have defined their own ITS architecture, and their own multidisciplinary approach towards their deployed strategy. These architectures comprise of different informal design patterns.
-There is no standard notation to help in merging these architectures into a silo-based architecture.
-Silo-based means harmonizing existing technologies without changing them.
-Without a common C-ITS architecture framework, different categorizations and ad-hoc notations have been used in existing C-ITS architectures.
-This demands a standardized approach to consolidate and integrate existing architectures, addressing concerns such as security, availability, and maintainability.
+In addition, the partner deployment sites (\ref{fig:deployment sites}) have their own C-ITS implementations with their own C-ITS architecture, ad-hoc notations and differing categorizations.
+
+Thus, there doesn't seem to be a standard notation for use in a large scale deployment. This demands a standardized approach to consolidate and integrate existing architectures, addressing concerns such as security and maintainability.
+
+This is where the C-MobILE project comes in. It aims for a large scale demonstration across various deployment sites with an architecture that harmonizes existing technologies without changing the existing architectures. It also plans to be a building block or the base for future C-ITS implementations in other cities or regions.
 
 %\begin{figure}[ht!]
 %  \centering
@@ -116,12 +133,8 @@ This demands a standardized approach to consolidate and integrate existing archi
 
 \section{Methodology}
 
-To develop a common and compatible reference architecture, the following C-ITS projects were taken into consideration: (i) The Dutch C-ITS Reference Architecture (DITCM) \cite{ditcm}, (ii) CONVERGE\footnote{Converge. \url{https://converge-online.de/}}, (iii) COMPASS4D\footnote{Compass4d. \url{http://ertico.com/projects/compass4d/}.}, (iv) MOBiNET\footnote{MOBiNET. \url{http://www.mobinet.eu/}.}, (v) NordicWay\footnote{Nordicway. \url{http://vejdirektoratet.dk/EN/roadsector/Nordicway/Pages/Default.aspx}.} and (vi) US-ITS (ARC-IT) \footnote{Arc-it version 8.1. \url{https://local.iteris.com/arc-it/}.}.
-
-Besides these C-ITS architectures, we considered ITS implementations of the deployed sites involved with C-MobILE.
-We applied a reverse architect approach by extracting the systems, protocols, networks, and technology details from these architectures manually (Fig.: \ref{methodology}).
-
-To define the reference architecture Systems Modeling Language or SysML was proposed.
+ 
+To develop a common and compatible reference architecture, the following C-ITS projects were taken into consideration: (i) The Dutch C-ITS Reference Architecture (DITCM) \cite{ditcm}\cite{ditcmits}, (ii) CONVERGE\footnotemark[\ref{converge}], (iii) COMPASS4D\footnotemark[\ref{compass4d}], (iv) MOBiNET\footnote{\label{mobinet}MOBiNET. \url{http://www.mobinet.eu/}}, (v) NordicWay\footnotemark[\ref{nordicway}], (vi) SCOOP@F\footnote{SCOOP@F. \url{https://ec.europa.eu/inea/en/connecting-europe-facility/cef-transport/projects-by-country/multi-country/2014-eu-ta-0669-s}} and (vii) US-ITS (ARC-IT)\footnotemark[\ref{arcit}].
 
 \begin{figure}[ht!]
 	\centering
@@ -129,45 +142,26 @@ To define the reference architecture Systems Modeling Language or SysML was prop
 	\caption{Developing a reference architecture for C-ITS by extracting and reverse engineering of existing architectures}
 	\label{methodology}
 	\centering
-	
 \end{figure}
 
-A repository has been constructed consolidating all necessary and required information from existing architectures.
-A thorough analysis was done to extract the commonalities, but not leaving behind their specific implementation details.
-As a well-defined architecture framework is important for any architecture description \cite{archframework}, we defined an architecture framework for the C-ITS domain \cite{ITSCongress}.
-Architecture frameworks facilitate communication and cooperation between different stakeholders while designing and constructing complex systems such as C-ITS.
-Many different stakeholders with their interweaving concerns require a systematic approach for addressing the complexity of the lifecycle of the system.
-To put architecture framework and architecture description concepts in context, we extend the conceptual model of the ISO/IEC/IEEE 42010\cite{iso42010} architecture framework.
-The C-ITS architecture framework specifies stakeholders, their concerns, viewpoints, model kinds, and correspondence rules.
-C-ITS architects can use our architecture framework to represent their C-ITS architecture, concrete implementation and deployed site architectures.
+Besides these C-ITS architectures, we considered ITS implementations of the deployed sites involved with C-MobILE.
+We applied a reverse architect approach by extracting the systems, protocols, networks, and technology details from these architectures manually (Fig.: \ref{methodology}).
 
-To design the C-MobILE architecture framework, the architecture process has been split into three parts:
-The design phase, the refinement phase, and the details phase.
+To define the reference architecture Systems Modeling Language or SysML was proposed. SysML is a general purpose modeling language for engineering systems, and consist of structure diagrams, requirement diagrams and behavior diagrams. The architecture framework and a unified modelling approach can enable common language and will be reused for the next deployment projects. Furthermore, organizations can use the architecture to guide their internal development process as it reflects a common understanding of how the ITS landscape will evolve.
 
-In the design phase, we create the reference architecture by analysing existing architectures, described in section \ref{secCMobILEReferenceArchitecture}.
-In parallel, use-cases, business-cases, and requirements for the C-MobILE system are collected.
-In the refinement phase, we use the reference architecture to create the medium-level architecture.
-Furthermore, services, interfaces, and concepts are described to provide a guideline for the final phase.
-In the details phase, we describe interfaces and concepts in detail to create a low-level implementation architecture.
+More info on methodology in \todo{give name of paper}.
 
-We propose to use Systems Modelling Language (SysML) diagrams for architectural notations of the C-ITS architectures.
-SysML is a general purpose modelling language for engineering systems, and consists of structure diagrams, requirement diagrams, and behavior diagrams.
-The architecture framework and a unified modelling approach can enable common language and will be reused for the next deployment projects.
-Furthermore, organizations can use the architecture to guide their internal development process as it reflects a common understanding of how the ITS landscape will evolve.
 
 
 \section{C-MobILE Reference Architecture}
 \label{secCMobILEReferenceArchitecture}
 
 The C-MobILE Reference Architecture focuses on an abstract level and uses a black box approach wherever possible.
-It describes various systems at a high level in the form of models using SysML.
-SysML Block Definition Diagrams (BDD) and Internal Block Diagrams are used to represent the models for the reference architecture at an abstract level, providing base level information to architects.
-However, due to the heterogeneous nature of such interfaces this will not be possible for all interfaces of the architecture.
-For example, there exist several competing standards for roadside infrastructure to communicate with traffic management centers.
+It describes various systems at a high level in the form of models using SysML Block Definition Diagrams (BDD) and Internal Block Diagrams (IBD), providing base level information to architects. These block diagrams capture architecture viewpoints defined for C-MobILE. 
 The C-MobILE project neither has the resources nor the intention to redefine all those standards.
 Instead, at high level we highlight the common systems, their interfaces and protocols by considering various existing projects to ensure interoperability.
 
-As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing architectures, which was consistent with the DITCM reference architecture. \todo{What is DITCM?}
+As a result of the architecture analysis and reverse architecting process, we have extracted the reference architecture from various existing architectures, which was consistent with the DITCM reference architecture \cite{ditcm}\cite{ditcmits}.
 The structure of a system is captured in functional structure models using BDDs by categorizing into systems and decomposing a system into subsystems.
 A system defines the functionality and functional data flow interfaces between systems that are required to support a particular ITS application.
 A functional model digram is shown in Figure \ref{functional} for the capturing functional viewpoint.
@@ -200,6 +194,8 @@ The C-MobILE project is funded by the European Union's Horizon 2020 research and
     \bibitem{ec} European Commission. Directive 2010/40/eu of the european parliament and of the council.
     \bibitem{ecits} European Commission. Intelligent transport systems. \url{https://ec.europa.eu/transport/themes/its/c-its_en}.
     \bibitem{ditcm} Marcel van Sambeek, Frank Ophelders, Tjerk Bijlsmaand Borgert van der Kluit, Oktay Turetken, Rik Eshuis, Kostas Traganos, and Paul Grefen. Towards an architecture for cooperative-intelligent transport system (c-its) applications in the netherlands. Available at \url{ https://www.researchgate.net/publication/313580768_Towards_an_Architecture_for_Cooperative-Intelligent_Transport_System_C-ITS_Applications_in_the_Netherlands}.
+
+	\bibitem{ditcmits} Dr Igor Passchier, Dr Ir Marcel van sambeek, Ir Joelle van den Broek and Drs Ir Paul Potters. The Dutch C-ITS Reference architecture. Paper number EU-TP0105. 11th ITS European Congress, Glasgow, Scotland, 6-9 June 2016.
 
     \bibitem{iso42010} ISO/IEC/IEEE Systems and software engineering -- Architecture description," in ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000) , vol., no., pp.1-46, Dec. 1 2011 doi: 10.1109/IEEESTD.2011.6129467
     
